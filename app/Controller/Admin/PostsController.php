@@ -6,11 +6,6 @@ class PostsController extends AdminAppController{
 
   public function admin_index(){
     $this->loadModel('User');
-
-    $username = $this->User->find('first');
-
-    $this->set(compact('username'));
-
   }
 
 

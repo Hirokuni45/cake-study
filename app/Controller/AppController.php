@@ -47,4 +47,8 @@ class AppController extends Controller {
 
     ]
   ];
+
+  public function beforeFilter(){
+    $this->Auth->allow($this->params['action']);
+  }
 }
