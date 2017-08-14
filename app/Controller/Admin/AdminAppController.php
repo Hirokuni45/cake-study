@@ -6,8 +6,8 @@ class AdminAppController extends AppController {
     $this->layout = 'admin';
     $this->Auth->deny();
 
-    $user = $this->Auth->user();
-    $this->set(compact('user'));
+    $loginUser = $this->Auth->user();
+    $this->set(compact('loginUser'));
   }
 
 }

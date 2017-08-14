@@ -46,7 +46,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
       <!-- Top Menu Items -->
       <ul class="nav navbar-right top-nav">
         <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?= $user['username']; ?> <b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?= $loginUser['username']; ?> <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <!--<li>
                 <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -68,7 +68,10 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
             <li class="active">
-              <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+              <a href="/admin/posts/"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+            </li>
+            <li>
+              <a href="/admin/users/"><i class="fa fa-fw fa-user"></i> User</a>
             </li>
           </ul>
         </div>
@@ -80,7 +83,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         <div class="container-fluid">
 
           <div class="row">
-             <?php echo $this->fetch('content'); ?>
+            <?= $this->fetch('content'); ?>
           </div>
 
         </div>

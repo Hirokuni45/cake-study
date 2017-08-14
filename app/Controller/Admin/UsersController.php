@@ -6,7 +6,6 @@ class UsersController extends AdminAppController{
 
   public function beforeFilter(){
     parent::beforeFilter();
-    $this->layout = 'default';
     $this->Auth->allow('admin_add','admin_logout');
     #if($this->action == 'admin_login' || $this->action == 'admin_logout'){
     #}else{
@@ -17,6 +16,7 @@ class UsersController extends AdminAppController{
 
 
   public function admin_add(){
+    $this->layout = 'default';
     if($this->request->is('get')){ return; }
     if ($this->User->save($this->request->data)) {
       return $this->redirect(['action'=>'admin_login']);
@@ -24,6 +24,7 @@ class UsersController extends AdminAppController{
   }
 
   public function admin_login(){
+    $this->layout = 'default';
     if($this->request->is('get')){ return; }
     if($this->request->is('post')){
       if($this->Auth->login()){
@@ -33,6 +34,11 @@ class UsersController extends AdminAppController{
       }
 
     }
+
+  }
+  public function admin_index(){
+    $users = $this->User->find('all');
+    $this->set(compact('users'));
 
   }
 
